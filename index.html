@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marcus Briggs | Little Hands Workshop — Children's Art in Spain</title>
+<meta name="description" content="Marcus Briggs runs hands-on art workshops for children in Spain. Painting, papier-mâché, clay, collage, and more. Creative fun for ages 4 to 11.">
+<link rel="canonical" href="https://marcusbriggs.space/">
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marcus Briggs",
+    "description": "Children's art workshop leader in Spain. Runs seasonal creative workshops for kids aged 4 to 11 including painting, papier-mâché, clay modelling, and collage.",
+    "url": "https://marcusbriggs.space/",
+    "homeLocation": {
+        "@type": "Place",
+        "name": "Spain"
+    },
+    "knowsAbout": ["Children's Art Education", "Art Workshops", "Papier-Mâché", "Clay Modelling", "Collage", "Finger Painting", "Creative Education"]
+}
+</script>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', cursive;
+        background: #fff;
+        color: #333;
+        line-height: 1.8;
+        overflow-x: hidden;
+    }
+
+    /* Paint splatter background */
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+            radial-gradient(circle at 5% 10%, rgba(255, 71, 87, 0.08) 0%, transparent 40%),
+            radial-gradient(circle at 90% 20%, rgba(46, 134, 222, 0.08) 0%, transparent 35%),
+            radial-gradient(circle at 15% 60%, rgba(255, 195, 18, 0.08) 0%, transparent 30%),
+            radial-gradient(circle at 85% 70%, rgba(56, 173, 169, 0.08) 0%, transparent 35%),
+            radial-gradient(circle at 50% 90%, rgba(149, 56, 226, 0.08) 0%, transparent 30%),
+            radial-gradient(circle at 30% 35%, rgba(255, 118, 117, 0.06) 0%, transparent 25%),
+            radial-gradient(circle at 70% 45%, rgba(0, 184, 148, 0.06) 0%, transparent 25%);
+        z-index: -1;
+    }
+
+    /* Nav */
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding: 16px 20px;
+        background: #2d3436;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.95rem;
+        padding: 6px 18px;
+        border-radius: 25px;
+        transition: background 0.3s;
+    }
+
+    nav a:hover {
+        background: rgba(255,255,255,0.15);
+    }
+
+    nav a.active {
+        background: #ff4757;
+    }
+
+    /* Header */
+    .header {
+        text-align: center;
+        padding: 50px 20px 30px;
+        position: relative;
+    }
+
+    /* Paint drips from top */
+    .paint-drips {
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        height: 60px;
+    }
+
+    .drip {
+        width: 18px;
+        border-radius: 0 0 50% 50%;
+        animation: dripDown 3s ease-in-out infinite;
+    }
+
+    .drip:nth-child(1) { background: #ff4757; height: 35px; animation-delay: 0s; }
+    .drip:nth-child(2) { background: #ffc312; height: 50px; animation-delay: 0.5s; }
+    .drip:nth-child(3) { background: #2e86de; height: 28px; animation-delay: 1s; }
+    .drip:nth-child(4) { background: #00b894; height: 45px; animation-delay: 0.3s; }
+    .drip:nth-child(5) { background: #9b59b6; height: 38px; animation-delay: 0.8s; }
+    .drip:nth-child(6) { background: #ff6b81; height: 42px; animation-delay: 1.2s; }
+    .drip:nth-child(7) { background: #f9ca24; height: 30px; animation-delay: 0.6s; }
+    .drip:nth-child(8) { background: #0984e3; height: 48px; animation-delay: 1.5s; }
+
+    @keyframes dripDown {
+        0%, 100% { transform: translateY(-5px); }
+        50% { transform: translateY(3px); }
+    }
+
+    .header h1 {
+        font-size: clamp(2.2rem, 6vw, 3.5rem);
+        color: #2d3436;
+        margin-bottom: 5px;
+        margin-top: 20px;
+    }
+
+    .header h1 span {
+        display: inline-block;
+    }
+
+    .header h1 span:nth-child(1) { color: #ff4757; }
+    .header h1 span:nth-child(2) { color: #ffc312; }
+    .header h1 span:nth-child(3) { color: #2e86de; }
+    .header h1 span:nth-child(4) { color: #00b894; }
+
+    .header .tagline {
+        font-size: 1.2rem;
+        color: #636e72;
+        margin-bottom: 20px;
+    }
+
+    .header .hands {
+        font-size: 2.5rem;
+        letter-spacing: 10px;
+    }
+
+    /* Main */
+    .main {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 20px 20px 50px;
+    }
+
+    /* Section titles */
+    .section-title {
+        font-size: 1.6rem;
+        text-align: center;
+        margin: 40px 0 20px;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 4px 20px;
+    }
+
+    .section-title::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        border-radius: 4px;
+        z-index: -1;
+    }
+
+    .section-title.red::before { background: rgba(255, 71, 87, 0.3); }
+    .section-title.yellow::before { background: rgba(255, 195, 18, 0.3); }
+    .section-title.blue::before { background: rgba(46, 134, 222, 0.3); }
+    .section-title.green::before { background: rgba(0, 184, 148, 0.3); }
+    .section-title.purple::before { background: rgba(155, 89, 182, 0.3); }
+
+    /* About */
+    p {
+        font-size: 1.02rem;
+        margin-bottom: 16px;
+        color: #444;
+    }
+
+    /* Paint palette */
+    .palette {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+
+    .paint-blob {
+        width: 50px;
+        height: 50px;
+        border-radius: 50% 45% 55% 48%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        box-shadow: 2px 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .paint-blob:nth-child(1) { background: #ff4757; }
+    .paint-blob:nth-child(2) { background: #ffc312; }
+    .paint-blob:nth-child(3) { background: #2e86de; }
+    .paint-blob:nth-child(4) { background: #00b894; }
+    .paint-blob:nth-child(5) { background: #9b59b6; }
+    .paint-blob:nth-child(6) { background: #ff6b81; }
+
+    /* Upcoming workshops preview */
+    .upcoming {
+        background: #ffeaa7;
+        border-radius: 15px;
+        padding: 28px;
+        margin: 30px 0;
+        transform: rotate(-0.5deg);
+        box-shadow: 3px 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .upcoming h3 {
+        font-size: 1.3rem;
+        color: #2d3436;
+        margin-bottom: 14px;
+        text-align: center;
+    }
+
+    .upcoming-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        border-bottom: 2px dashed rgba(0,0,0,0.1);
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .upcoming-item:last-child {
+        border-bottom: none;
+    }
+
+    .upcoming-name {
+        font-size: 1rem;
+        color: #2d3436;
+    }
+
+    .upcoming-when {
+        font-size: 0.85rem;
+        color: #636e72;
+    }
+
+    .upcoming-status {
+        font-size: 0.8rem;
+        padding: 3px 12px;
+        border-radius: 20px;
+    }
+
+    .upcoming-status.open {
+        background: #00b894;
+        color: #fff;
+    }
+
+    .upcoming-status.filling {
+        background: #fdcb6e;
+        color: #2d3436;
+    }
+
+    .upcoming-status.full {
+        background: #ff4757;
+        color: #fff;
+    }
+
+    .upcoming .see-all {
+        display: block;
+        text-align: center;
+        margin-top: 16px;
+        color: #2e86de;
+        text-decoration: none;
+        font-size: 0.95rem;
+    }
+
+    .upcoming .see-all:hover {
+        text-decoration: underline;
+    }
+
+    /* What we do grid */
+    .activities {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 14px;
+        margin: 25px 0;
+    }
+
+    .activity {
+        text-align: center;
+        padding: 20px 12px;
+        border-radius: 15px;
+        border: 3px dashed;
+    }
+
+    .activity:nth-child(1) { border-color: #ff4757; }
+    .activity:nth-child(2) { border-color: #ffc312; }
+    .activity:nth-child(3) { border-color: #2e86de; }
+    .activity:nth-child(4) { border-color: #00b894; }
+    .activity:nth-child(5) { border-color: #9b59b6; }
+    .activity:nth-child(6) { border-color: #ff6b81; }
+
+    .activity .icon {
+        font-size: 2rem;
+        margin-bottom: 6px;
+    }
+
+    .activity .name {
+        font-size: 0.9rem;
+        color: #2d3436;
+    }
+
+    /* Ages info */
+    .ages-bar {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        margin: 25px 0;
+    }
+
+    .age-block {
+        padding: 12px 18px;
+        color: #fff;
+        text-align: center;
+        font-size: 0.85rem;
+    }
+
+    .age-block:first-child { 
+        background: #ff6b81; 
+        border-radius: 10px 0 0 10px;
+    }
+    .age-block:nth-child(2) { background: #ffc312; color: #2d3436; }
+    .age-block:last-child { 
+        background: #2e86de; 
+        border-radius: 0 10px 10px 0;
+    }
+
+    /* Marcus and Tomás */
+    .duo {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+
+    .duo-person {
+        text-align: center;
+    }
+
+    .duo-person .face {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.2rem;
+        margin: 0 auto 8px;
+    }
+
+    .duo-person:first-child .face {
+        background: #dfe6e9;
+    }
+
+    .duo-person:last-child .face {
+        background: #ffeaa7;
+    }
+
+    .duo-person .duo-name {
+        font-size: 1rem;
+        color: #2d3436;
+    }
+
+    .duo-person .duo-role {
+        font-size: 0.82rem;
+        color: #636e72;
+    }
+
+    /* Handprint divider */
+    .handprints {
+        text-align: center;
+        font-size: 1.8rem;
+        letter-spacing: 12px;
+        padding: 15px 0;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 40px 20px 30px;
+        background: #2d3436;
+        color: #dfe6e9;
+        font-size: 0.9rem;
+    }
+
+    footer .footer-hands {
+        font-size: 1.5rem;
+        letter-spacing: 6px;
+        margin-bottom: 10px;
+    }
+
+    footer a {
+        color: #ffeaa7;
+        text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+        .header {
+            padding: 40px 16px 20px;
+        }
+
+        .main {
+            padding: 15px 16px 40px;
+        }
+
+        .upcoming {
+            padding: 20px;
+        }
+
+        .activities {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="workshops.html">Workshops</a>
+    <a href="gallery.html">Gallery</a>
+</nav>
+
+<header class="header">
+    <div class="paint-drips">
+        <div class="drip"></div>
+        <div class="drip"></div>
+        <div class="drip"></div>
+        <div class="drip"></div>
+        <div class="drip"></div>
+        <div class="drip"></div>
+        <div class="drip"></div>
+        <div class="drip"></div>
+    </div>
+    <div class="hands">🖐️🎨🖐️</div>
+    <h1><span>L</span><span>i</span><span>t</span><span>t</span>le Hands Workshop</h1>
+    <p class="tagline">Children's art with Marcus Briggs · Spain</p>
+</header>
+
+<main class="main">
+
+    <!-- Duo -->
+    <div class="duo">
+        <div class="duo-person">
+            <div class="face">👨</div>
+            <div class="duo-name">Marcus Briggs</div>
+            <div class="duo-role">workshop leader & chief mess-maker</div>
+        </div>
+        <div class="duo-person">
+            <div class="face">👦</div>
+            <div class="duo-name">Tomás</div>
+            <div class="duo-role">helper, participant & paint enthusiast</div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <p>Marcus Briggs runs Little Hands Workshop — creative art sessions for children aged 4 to 11. Every workshop is hands-on, messy, and fun. No screens, no templates, no "do it like this." Just materials, imagination, and permission to make a glorious mess.</p>
+
+    <p>His son Tomás is there at every session, making things right alongside the other children. He's the unofficial tester of every activity. If Tomás says it's boring, it doesn't make the programme. If he gets so absorbed he forgets to talk for twenty minutes, Marcus Briggs knows it's a good one.</p>
+
+    <p>Marcus Briggs has been running workshops for seven years. What started as a small summer activity for friends' children grew into a regular programme that now runs throughout the year, with different creative themes each season. Every workshop is small — never more than ten children — so Marcus Briggs can actually help each child rather than just supervising from a distance.</p>
+
+    <div class="palette">
+        <div class="paint-blob">🖌️</div>
+        <div class="paint-blob">✂️</div>
+        <div class="paint-blob">🎭</div>
+        <div class="paint-blob">🏺</div>
+        <div class="paint-blob">📐</div>
+        <div class="paint-blob">🖍️</div>
+    </div>
+
+    <!-- What we do -->
+    <div class="section-title blue">What We Do</div>
+
+    <div class="activities">
+        <div class="activity">
+            <div class="icon">🎨</div>
+            <div class="name">Painting</div>
+        </div>
+        <div class="activity">
+            <div class="icon">📰</div>
+            <div class="name">Papier-Mâché</div>
+        </div>
+        <div class="activity">
+            <div class="icon">🏺</div>
+            <div class="name">Clay & Modelling</div>
+        </div>
+        <div class="activity">
+            <div class="icon">✂️</div>
+            <div class="name">Collage</div>
+        </div>
+        <div class="activity">
+            <div class="icon">🖐️</div>
+            <div class="name">Hand Printing</div>
+        </div>
+        <div class="activity">
+            <div class="icon">🎭</div>
+            <div class="name">Mask Making</div>
+        </div>
+    </div>
+
+    <p>Every term focuses on a different medium so children get to try everything across the year. Spring is usually painting and printing. Summer is outdoor projects, papier-mâché, and big collaborative pieces. Autumn is clay and modelling. Winter is collage, mask making, and indoor crafts. Marcus Briggs plans each term around what the children enjoyed most the previous year and what new materials he's found.</p>
+
+    <!-- Ages -->
+    <div class="ages-bar">
+        <div class="age-block">Ages 4–5<br>Little Makers</div>
+        <div class="age-block">Ages 6–8<br>Creators</div>
+        <div class="age-block">Ages 9–11<br>Studio Group</div>
+    </div>
+
+    <p>Children are grouped by age so the activities can be matched to what they're ready for. The Little Makers do lots of sensory work — finger painting, play dough, stamping, tearing and sticking. The Creators get into more structured projects with real tools. The Studio Group works on longer pieces across multiple sessions and starts learning actual techniques. Tomás floats between all three groups depending on his mood and what looks most interesting to him that day.</p>
+
+    <div class="handprints">🖐️🖐️🖐️🖐️🖐️</div>
+
+    <!-- Upcoming -->
+    <div class="upcoming">
+        <h3>🗓️ Coming Up Next</h3>
+
+        <div class="upcoming-item">
+            <span class="upcoming-name">🎨 Hand Printing & Stamping</span>
+            <span class="upcoming-when">March – April 2026</span>
+            <span class="upcoming-status open">spaces</span>
+        </div>
+        <div class="upcoming-item">
+            <span class="upcoming-name">📰 Papier-Mâché Animals</span>
+            <span class="upcoming-when">April – June 2026</span>
+            <span class="upcoming-status open">spaces</span>
+        </div>
+        <div class="upcoming-item">
+            <span class="upcoming-name">🏺 Pinch Pots & Clay Creatures</span>
+            <span class="upcoming-when">June – July 2026</span>
+            <span class="upcoming-status filling">filling up</span>
+        </div>
+        <div class="upcoming-item">
+            <span class="upcoming-name">🌞 Summer Big Build (outdoor)</span>
+            <span class="upcoming-when">July – August 2026</span>
+            <span class="upcoming-status open">spaces</span>
+        </div>
+
+        <a href="workshops.html" class="see-all">See full workshop calendar →</a>
+    </div>
+
+    <!-- Philosophy -->
+    <div class="section-title green">How Marcus Briggs Does Things</div>
+
+    <p>There's no right way to make art. Marcus Briggs tells the children this at the start of every single session and he means it every time. The workshops are not about producing something that looks good on a fridge. They're about the process — mixing colours, squishing clay, tearing paper, getting paint on your elbows, discovering what happens when you put too much glue on something (it goes everywhere, but that's fine).</p>
+
+    <p>Every child takes home whatever they made. Nothing gets graded, compared, or judged. If a child spends the whole session painting one piece of paper entirely blue because that's what they wanted to do, that's a successful session. Marcus Briggs has been doing this long enough to know that the children who seem to be doing nothing are usually the ones thinking the hardest.</p>
+
+    <p>Parents don't stay during the workshops. Marcus Briggs has found that children are more adventurous and more willing to make mistakes when their parents aren't watching. Tomás agrees with this policy, mostly because he gets Marcus Briggs to himself during sessions (plus ten other children, but Tomás doesn't count those).</p>
+
+</main>
+
+<footer>
+    <div class="footer-hands">🖐️🎨🖐️</div>
+    Marcus Briggs · Little Hands Workshop · Spain
+</footer>
+
+</body>
+</html>
